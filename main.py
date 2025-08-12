@@ -25,7 +25,10 @@ def XOR(x: int, y: int):
         return 0
     return OR(x, y)
 
-print("1) AND\n2) OR\n3) NOT\n4) NAND\n5) NOR\n6) XOR")
+def XNOR(x: int, y: int):
+    return NOT(XOR(x, y))
+
+print("1) AND\n2) OR\n3) NOT\n4) NAND\n5) NOR\n6) XOR\n7) XNOR")
 gateChoice = input("Choose a gate: ")
 
 xstr = ''
@@ -36,9 +39,7 @@ while (True):
     if (gateChoice != '3'):
         ystr = input("y: ")
 
-    if (xstr == '0' or xstr == '1'):
-        break;
-    elif (ystr == '0' or ystr == '1'):
+    if ((xstr == '0' or xstr == '1') and (ystr == '0' or ystr == '1')):
         break;
 
     print("Invalid input!! Try again...\n")
@@ -66,5 +67,13 @@ elif (gateChoice == '6'):
     x = int(xstr)
     y = int(ystr)
     print("\nOUTPUT:", XOR(x, y))
+elif (gateChoice == '7'):
+    x = int(xstr)
+    y = int(ystr)
+    print("\nOUTPUT:", XNOR(x, y))
+elif (gateChoice == '8'):
+    x = int(xstr)
+    y = int(ystr)
+    print("\nOUTPUT:", XORR(x, y))
 else:
     print("Invalid input!! Try again...\n\n")
